@@ -15,7 +15,7 @@ import java.util.ArrayList;
 public class MainRepository {
     private final FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
 
-    private LiveData<ArrayList<CategoryModel>> loadCategory(){
+    public LiveData<ArrayList<CategoryModel>> loadCategory(){
         MutableLiveData<ArrayList<CategoryModel>> listData = new MutableLiveData<>();
         DatabaseReference ref = firebaseDatabase.getReference("Category");
         ref.addValueEventListener(new ValueEventListener() {
