@@ -33,6 +33,17 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHo
 
     @Override
     public void onBindViewHolder(@NonNull CategoryAdapter.ViewHolder holder, int position) {
+        holder.binding.titleTxt.setText(items.get(position).getTitle());
+
+        holder.binding.getRoot().setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                lastSelectedPosition = selectedPosition;
+                selectedPosition = position;
+                notifyItemChanged(lastSelectedPosition);
+                notifyItemChanged(selectedPosition);
+            }
+        });
 
     }
 
@@ -46,6 +57,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHo
         ViewholderCategoryBinding binding;
         public ViewHolder(ViewholderCategoryBinding binding) {
             super(binding.getRoot());
+            this.binding = binding;
         }
     }
 }
