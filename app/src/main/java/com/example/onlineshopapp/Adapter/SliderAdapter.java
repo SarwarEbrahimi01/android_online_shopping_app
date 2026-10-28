@@ -4,11 +4,13 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.ViewPager2;
 
+import com.bumptech.glide.Glide;
 import com.example.onlineshopapp.Domain.BannerModel;
 import com.example.onlineshopapp.R;
 
@@ -45,12 +47,20 @@ public class SliderAdapter extends RecyclerView.Adapter<SliderAdapter.SliderView
 
     @Override
     public int getItemCount() {
-        return 0;
+        return sliderItems.size();
     }
 
     public class SliderViewholder extends RecyclerView.ViewHolder {
+        private ImageView imageView;
         public SliderViewholder(@NonNull View itemView) {
             super(itemView);
+            imageView = itemView.findViewById(R.id.imageSlide);
+        }
+
+        void setImageView(BannerModel bannerModel){
+            Glide.with(context)
+                    .load(bannerModel.getUrl())
+                    .into(imageView);
         }
     }
 }
