@@ -42,6 +42,10 @@ public class SliderAdapter extends RecyclerView.Adapter<SliderAdapter.SliderView
 
     @Override
     public void onBindViewHolder(@NonNull SliderAdapter.SliderViewholder holder, int position) {
+        holder.setImageView(sliderItems.get(position));
+        if (position == sliderItems.size() - 2){
+            viewPager2.post(runnable);
+        }
 
     }
 
