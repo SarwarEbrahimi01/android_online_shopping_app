@@ -28,7 +28,11 @@ public class MainActivity extends AppCompatActivity {
         viewModel = new MainViewModel();
 
         initCategory();
+        initSlider();
 
+    }
+
+    private void initSlider() {
     }
 
     private void initCategory() {
