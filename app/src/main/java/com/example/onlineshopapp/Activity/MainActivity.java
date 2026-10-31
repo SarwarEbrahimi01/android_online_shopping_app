@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initSlider() {
+
     }
 
     private void initCategory() {
