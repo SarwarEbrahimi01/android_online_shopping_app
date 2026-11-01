@@ -50,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
         binding.viewPagerSlider.setAdapter(new SliderAdapter(bannerModels,binding.viewPagerSlider));
         binding.viewPagerSlider.setClipToPadding(false);
         binding.viewPagerSlider.setClipChildren(false);
+        binding.viewPagerSlider.setOffscreenPageLimit(3);
     }
 
     private void initCategory() {
