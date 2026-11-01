@@ -11,6 +11,7 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.example.onlineshopapp.Adapter.CategoryAdapter;
+import com.example.onlineshopapp.Adapter.SliderAdapter;
 import com.example.onlineshopapp.Domain.BannerModel;
 import com.example.onlineshopapp.R;
 import com.example.onlineshopapp.ViewModel.MainViewModel;
@@ -46,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void banners(ArrayList<BannerModel> bannerModels) {
+        binding.viewPagerSlider.setAdapter(new SliderAdapter(bannerModels,binding.viewPagerSlider));
     }
 
     private void initCategory() {
