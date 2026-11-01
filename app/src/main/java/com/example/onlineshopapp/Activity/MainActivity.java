@@ -48,6 +48,8 @@ public class MainActivity extends AppCompatActivity {
 
     private void banners(ArrayList<BannerModel> bannerModels) {
         binding.viewPagerSlider.setAdapter(new SliderAdapter(bannerModels,binding.viewPagerSlider));
+        binding.viewPagerSlider.setClipToPadding(false);
+        binding.viewPagerSlider.setClipChildren(false);
     }
 
     private void initCategory() {
