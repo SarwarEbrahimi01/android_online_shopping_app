@@ -9,6 +9,8 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager2.widget.CompositePageTransformer;
 
 import com.example.onlineshopapp.Adapter.CategoryAdapter;
 import com.example.onlineshopapp.Adapter.SliderAdapter;
@@ -51,6 +53,9 @@ public class MainActivity extends AppCompatActivity {
         binding.viewPagerSlider.setClipToPadding(false);
         binding.viewPagerSlider.setClipChildren(false);
         binding.viewPagerSlider.setOffscreenPageLimit(3);
+        binding.viewPagerSlider.getChildAt(0).setOverScrollMode(RecyclerView.OVER_SCROLL_NEVER);
+
+        CompositePageTransformer compositePageTransformer = new CompositePageTransformer();
     }
 
     private void initCategory() {
