@@ -11,6 +11,7 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.CompositePageTransformer;
+import androidx.viewpager2.widget.MarginPageTransformer;
 
 import com.example.onlineshopapp.Adapter.CategoryAdapter;
 import com.example.onlineshopapp.Adapter.SliderAdapter;
@@ -56,6 +57,9 @@ public class MainActivity extends AppCompatActivity {
         binding.viewPagerSlider.getChildAt(0).setOverScrollMode(RecyclerView.OVER_SCROLL_NEVER);
 
         CompositePageTransformer compositePageTransformer = new CompositePageTransformer();
+        compositePageTransformer.addTransformer(new MarginPageTransformer(40));
+
+        binding.viewPagerSlider.setPageTransformer(compositePageTransformer);
     }
 
     private void initCategory() {
