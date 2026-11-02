@@ -44,8 +44,10 @@ public class MainActivity extends AppCompatActivity {
         viewModel.loadBanner().observeForever(bannerModels -> {
             if (bannerModels != null && !bannerModels.isEmpty()){
                 banners(bannerModels);
+                binding.progressBarSlider.setVisibility(View.GONE);
             }
         });
+        viewModel.loadBanner();
 
     }
 
